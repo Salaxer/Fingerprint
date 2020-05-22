@@ -1,0 +1,20 @@
+$Main_color: #009575;
+$said_color: #1e3d74;
+$main_font: 'Source Sans Pro', sans-serif;
+$filling_color: white;
+body{
+    margin: 0px;
+}
+.header{
+    width: 100%;
+    font-family: $main_font;
+    display: flex;
+    justify-content: start;
+    background-color: $Main_color;
+}
+
+.header img{
+    width: 15%;
+    background-color: $filling_color;
+    border-bottom: 2px solid $Main_color;
+}
