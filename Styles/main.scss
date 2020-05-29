@@ -4,6 +4,7 @@ $main_font: 'Source Sans Pro', sans-serif;
 $filling_color: white;
 body{
     margin: 0px;
+    background-color: rgba($color: #000000, $alpha: 0.2);
 }
 .header{
     width: 100%;
@@ -18,3 +19,89 @@ body{
     height: 120px;
     background-color: $filling_color;
 }
+.Main{
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.Main__form{
+    // Le pongo el display para centrarlos y separarlos items del form entre si
+    background-color: $filling_color;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.Main__form--hr{
+    // Solo es una linea de separacion como la de hr
+    margin-top: 3px;
+    width: 50%;
+    height: 2px;
+    background-color: $said_color;
+}
+.Main__form--title{
+    font-family: $main_font;
+    color: rgba(0, 0, 0,0.6);
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 80px;
+}
+.Main__form--input{
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid $said_color;
+    border-radius: 20px;
+    color: black;
+    font-family: "Muli", sans-serif;
+    font-size: 16px;
+    height: 50px;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 0px 20px;
+    width: 50%;
+}
+// Solo cuando el input se selecciona se activa
+.Main__form--input:focus{
+    box-shadow: 2px 0px 20px 1px $said_color;
+}
+.Main__form--button{
+    border-radius: 4px;
+    background-color: $said_color;
+    border: none;
+    color: $filling_color;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+.Main__form--button span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.Main__form--button span:after{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.Main__form--button:hover span {
+    padding-right: 25px;
+  }
+  
+  .Main__form--button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+::placeholder{
+    font-family: $main_font;
+    font-weight: bold;
+}
+
