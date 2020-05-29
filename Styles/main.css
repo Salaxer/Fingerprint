@@ -6,14 +6,14 @@ body {
   width: 100%;
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   background-color: #009575;
 }
 
 .header img {
-  width: 15%;
+  width: 80%;
+  height: 120px;
   background-color: white;
-  border-bottom: 2px solid #009575;
 }
 
 /*# sourceMappingURL=main.css.map */
