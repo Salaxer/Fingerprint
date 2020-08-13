@@ -1,0 +1,710 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet');
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+}
+/* El popup que diseñe */
+.Add{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 600ms;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-top: 50px;
+}
+.Add:target{
+  background: rgba(0,0,0,0.8);
+  visibility: visible;
+  opacity: 1;
+}
+.Add__container{
+  width: 80%;
+  height: 650px;
+  display: flex;
+  background: white;
+  visibility: hidden;
+  transform: rotate(90deg) translate(-150%, 230%);
+  transition: all 600ms;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+.Add:target  .Add__container{
+  transform: rotate(0deg) translate(0%, 0%);
+  visibility: visible;
+}
+.Add:target ~ .sidebar{
+  transform: translateX(-100%);
+}
+.Add__container--header{
+  width: 100%;
+  height: 70px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #009675;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+.Add__container--header h1{
+  color: rgb(255, 255, 255);
+}
+.Add__container--form{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+  height: 100%;
+}
+.Add__container--form label{
+  color: rgba(0,0,0,.8);
+  font-size: 25px;
+  margin-top: 20px;
+}
+.Add__container--form select{
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #1e3d74;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  color: black;
+  font-family: "Muli", sans-serif;
+  font-size: 16px;
+  height: 50px;
+  margin-top: 20px;
+  outline: none;
+  padding: 0px 20px;
+  width: 50%;
+  box-shadow: 0px 0px 0px 0px #1e3d74;
+  transition: all 0.5s ease;
+}
+.Add__container--form select:focus{
+  box-shadow: 0px 0px 4px 1px #1e3d74;
+}
+.Add__container--form button{
+  margin-top: 15px;
+  border-radius: 4px;
+  background-color: #1e3d74;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.Add__container--form button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.Add__container--form button span:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.Add__container--form button:hover span {
+  padding-right: 25px;
+}
+
+.Add__container--form button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#Add__close{
+  font-size: 15px;
+  position: absolute;
+  right: -13px;
+  top: -13px;
+  padding: 5px;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  transition: all .5s ease;
+}
+#Add__close:hover{
+ transform:rotate(180deg) scale(1.6);
+ color: rgba(255, 0, 0, 0.8);
+ background-color: rgba(255, 255, 255, 0.5);
+}
+/* mi header */
+.header {
+  width: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  justify-content: center;
+  background-color: #009675;
+}
+
+header img {
+  width: 80%;
+  height: 120px;
+  background-color: white;
+  transition: all .5s ease-in-out;
+}
+.span__top{
+  display: flex;
+  justify-content: center;
+}
+.span__top--hr {
+  margin: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: #1e3d74;
+  transition: all .5s ease-in;
+}
+
+/* Mi barra lateral */
+#check{
+  visibility: hidden;
+  display: none;
+}
+.sidebar{
+  display: flex;
+  position: absolute;
+  width: 100%;
+  flex-direction: row;
+  transition: all 1s ease-out;
+  background: #002a60;
+  line-height: 70px;
+}
+.sidebar2{
+  top: 0px;
+  position: fixed;
+}
+.sidebar__header{
+  display: none;
+}
+.sidebar__ul{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.sidebar__ul li{
+  width: 100%;
+  text-align: center;
+}
+.sidebar__ul .a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 19px;
+  color: white;
+  box-sizing: border-box;
+  border-left: 4px solid white;
+  transition: .4s;
+}
+.sidebar__ul .a:hover{
+  padding-left: 50px;
+  color: #009575;
+}
+label #btn,label #cancel{
+  font-size: 0px;
+  transition: all 1s ease;
+  visibility: hidden;
+  display: none;
+}
+
+.active{
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 19px;
+  color: #009575;
+  box-sizing: border-box;
+  border-left: 4px solid #009575;
+  transition: .4s;
+}
+/* Los grupos en css grid */
+.emailverify{
+  text-align: center;
+  padding: 5px;
+  background-color: rgba(255, 0, 0, 0.5);
+  height: 20px;
+  width: 100%;
+  top: 0;
+}
+section{
+  background-position: center;
+  background-size: cover;
+  height: auto;
+  transition: all .5s;
+  margin-top: 65px;
+  border-radius: 3px;
+  background-color: white;
+}
+.groups{
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  transition: 450ms -webkit-transform;
+  transition: 450ms transform;
+  transition: 450ms transform, 450ms -webkit-transform;
+  font-size: 20;
+  padding: 30px;
+  }
+.groups__ind{
+  background-color: rgba(255,255,255,1) ; 
+  -webkit-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.30);
+  -moz-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.30);
+  box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.30);
+  border-radius: 20px;
+  display: inline-block;
+  height: 250px;
+  margin-top: 30px;
+  margin-right: 22px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: 450ms all;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+
+
+.groups:hover .groups__ind:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  opacity: 1;
+}
+.groups__ind:hover ~ .groups__ind {
+  -webkit-transform: translate3d(40px, 5px, 0);
+  transform: translate3d(40px, 5px, 0);
+}
+.groups__ind a{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0,0,0,.5);
+}
+  
+  /* Empieza la cuenta */
+  
+#Cuenta{
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+.Cuenta__element{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+}
+.Cuenta__element--user{
+  margin-top: 60px;
+  display: flex;
+  color: rgba(0,0,0,.5);
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Cuenta__element h1{
+  color: rgba(0,0,0,.5);
+}
+.Cuenta__element--user h1{
+  width: 100px;
+}
+.Cuenta__element--user div{
+  position: relative;
+  width: 100%;  
+}
+.Cuenta__element--user div input{
+  position: absolute;
+  text-decoration: none;
+  outline: none;
+  width: 80%;
+  border:0px;
+  border-radius: 5px;
+  padding-right: 30px;
+  padding-left: 20px;
+  background-color: rgba(0,0,0,.4);
+  font-size: 20px;
+  color: white;
+  height: 35px;
+  transition: all .1s ease;
+  right: 0px;
+}
+.Cuenta__element--user div input:disabled{
+  background-color: rgba(0,0,0,.2);
+}
+.Cuenta__element--user div span{
+  margin-top: 5px;
+  margin-right: 5px;
+  position: absolute;
+  color: rgba(0,0,0,.5);
+  font-size: 22px;
+  cursor: pointer;
+  right: 0px;
+}
+::placeholder {
+  font-family: "Source Sans Pro", sans-serif;
+  color: white;
+}
+.Cuenta__element--save{
+  background-color: rgba(42, 139, 42, 0.5);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 80px;
+  transition: all .5s ease;
+}
+.Cuenta__element--save:disabled{
+  background-color: rgba(91, 93, 91, 0.5);
+  cursor: initial;
+}
+.Cuenta__element--save:disabled:hover{
+  background-color: rgba(91, 93, 91, 0.5);
+  cursor: initial;
+}
+.Cuenta__element--save:hover{
+  background-color: rgba(42, 139, 42, 0.7);
+}
+.Cuenta__element--cancel{
+  background-color: rgba(0,0,0,.4);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 20px;
+  transition: all .5s ease;
+
+}
+.Cuenta__element--cancel:disabled{
+  background-color: rgba(91, 93, 91, 0.5);
+  cursor: initial;
+}
+.Cuenta__element--cancel:disabled:hover{
+  background-color: rgba(91, 93, 91, 0.5);
+  cursor: initial;
+}
+.Cuenta__element--cancel:hover{
+  background-color: rgba(91, 93, 91, 0.8);
+  cursor: pointer;
+}
+.Cuenta__element--signout{
+  background-color: rgba(255, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 20px;
+  transition: all .5s ease;
+}
+.Cuenta__element--signout:hover{
+  background-color: rgba(255, 0, 0, 0.815);
+}
+.information{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.information__proyect{
+  background-image: url(../assets/acercade.png);
+  text-align: left;
+  width: 60%;
+  margin-top: 30px;
+  padding-top: 10px;
+  height: 1040px;
+  transition: all .6s ease-in;
+}
+.information__proyect--title{
+  text-align: center;
+  font-size: 20px;
+  max-width: 68%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding-left: 10px;
+}
+.information__proyect--title:nth-child(3){
+  padding-top: 40px;
+  font-size: 25px;
+}
+.information__proyect--subtitle{
+  text-align: center;
+  margin-top: 180px;
+  max-width: 68%;
+  font-size: 18px;
+  color: antiquewhite;
+}
+.information__proyect--name{
+  text-align: center;
+  margin-top: 180px;
+  max-width: 100%;
+  font-size: 30px;
+}
+.information__proyect .redes_sociales{
+  padding-top: 40px;
+  text-align: center;
+}
+.information__proyect .redes_sociales .facebook{
+  color: #385898;
+  text-decoration: none;
+  font-size: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.information__proyect .redes_sociales .twitter{
+  color: rgba(29,161,242,1.00);
+  text-decoration: none;
+  font-size: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.information__proyect .redes_sociales .github{
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.information__proyect .redes_sociales .instagram{
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.information__proyect .redes_sociales .linkedin{
+  color: #0073b1;
+  text-decoration: none;
+  font-size: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.information__proyect .redes_sociales .email{
+  color: rgba(0,0,0,.8);
+  text-decoration: none;
+  font-size: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.information__proyect .redes_sociales .phone{
+  color: rgba(0,0,0,.8);
+  text-decoration: none;
+  font-size: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.information__proyect .redes_sociales a i{
+  transform: scale(1);
+  transition: all .5s ease;
+}
+.information__proyect .redes_sociales a i:hover{
+  transform: scale(1.4);
+}
+@media only screen and (max-width: 960px) {
+    .information__proyect{
+      width: 88%;
+    }
+    .sidebar__ul .a{
+      font-size: 13px;
+      padding-left: 20px;
+    }
+    .sidebar__ul .active{
+      font-size: 13px;
+      padding-left: 20px;
+    }
+    .sidebar__ul li:hover a{
+      padding-left: 40px;
+    }
+    .groups{
+    grid-template-columns: 33% 33% 33%;
+    }
+  }
+@media only screen and (max-width: 780px) {
+  .information__proyect--title{
+    max-width: 85%;
+  }
+  .information__proyect--subtitle{
+    max-width: 85%;
+    margin-top: 150px;
+  }
+  .information__proyect--name{ 
+    font-size: 20px;
+    margin-top: 120px;
+  }
+  .information__proyect{
+    width: 100%;
+  }
+  /* ventana popup */
+
+  /* header */
+  .header img {
+    width: 100%;
+    height: 120px;
+    background-color: white;
+  }
+  /* lineas azules */
+  .span__top--hr {
+    margin: 0px;
+    width: 80%;
+    height: 2px;
+    background-color: #1e3d74;
+  }
+  /* barra lateral */
+  .sidebar {
+    display: unset;
+    position: absolute;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    padding: 0px;
+  }
+  .sidebar2{
+    top: 0px;
+    position: fixed;
+  }
+  .sidebar__header {
+    display: block;
+    background: #042331;
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 70px;
+    user-select: none;
+  }
+  .sidebar__ul{
+    display: inline;
+  }
+  .sidebar__ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+    border-top: 1px solid rgba(255,255,255,.1);
+    transition: .4s;
+  }
+  .sidebar__ul li:hover a{
+    padding-left: 50px;
+  }
+  .sidebar__ul a i{
+    margin-right: 16px;
+  }
+  label #btn,label #cancel{
+    display: inline;
+    visibility: visible;
+    position: absolute;
+    background: #042331;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  label #btn{
+    left: 40px;
+    margin-top: 10px;
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px;
+  }
+  label #cancel{
+    margin-top: 18px;
+    z-index: 1111;
+    left: -50%;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+  }
+  .Add:target ~ label #cancel{
+    visibility: hidden;
+  }
+  .Add:target ~ label #btn{
+    visibility: hidden;
+  }
+  #check:checked ~ .sidebar{
+    left: 0;
+  }
+  #check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #check:checked ~ label #cancel{
+    left: 40%;
+  }
+  #check:checked ~ section{
+    margin-left: 250px;
+  }
+  /* seccion de grupos */
+  .groups{
+    grid-template-columns: 50% 50%;
+    }
+  .groups__ind{
+    font-size: 20px;
+    }
+    .groups:hover .groups__ind:hover {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+    .groups__ind:hover ~ .groups__ind {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+    /* seccion de mi cuenta */
+  .Cuenta__element--user{
+    margin-top: 80px;
+    flex-direction: column;
+  }
+  .Cuenta__element--user div input{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 80%;
+  }
+  .Cuenta__element--user div span{
+    margin-top: 25px;
+    margin-bottom: 20px;
+  }
+  .Add__container--form select{
+    width: 90%;
+  }
+  .Add__container--form label{
+    font-size: 20px;
+    margin-top: 10px;
+  }
+}
