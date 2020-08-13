@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="title"></title>
+        <link rel="icon" type="image/png" href="/assets/icono.png" />
+        <link rel="stylesheet" href="./Styles/add.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- <script src="/__/firebase/7.17.1/firebase-app.js"></script>
+        <script src="/__/firebase/7.17.1/firebase-auth.js"></script>
+        <script src="/__/firebase/init.js"></script>
+        <script src="js/Firebase.js"></script> -->
+        <!--  SCRIPTS DE FIREBASE -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB12Kxasl9_VqpOHoKiH34CZ6PWrhl1hHw",
+            authDomain: "huelladactilar-60cf3.firebaseapp.com",
+            databaseURL: "https://huelladactilar-60cf3.firebaseio.com",
+            projectId: "huelladactilar-60cf3",
+            storageBucket: "huelladactilar-60cf3.appspot.com",
+            messagingSenderId: "980765642383",
+            appId: "1:980765642383:web:2fe8cd052aaaccb4982afa",
+            measurementId: "G-RYPRXF7R8L"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.auth();
+        </script>
+        <script src="js/valid.js"></script>
+
+    </head>
+    <body>
+        <header class="header">
+            <img src="./assets/header_utez.svg" alt="Logo utez">
+        </header>
+        <section class="Main">
+            <div class="Main__form">
+                <span class="Main__form--hr"></span>
+                <div class="title" id="recivir"></div>
+                <div class="Main__form--table">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                            <th>Alumno</th>
+                            <th>Matricula</th>
+                            <th>#ID</th>
+                            <th><p class="verticalText">Abril</p></th>
+                            <th><p class="verticalText">Abril</p></th>
+                            <th><p class="verticalText">Abril</p></th>
+                            <th><p class="verticalText">Abril</p></th>
+                        </tr>
+                      </thead>
+                      <tbody id="table__get--students">
+                      </tbody>
+                    </table>
+                </div>
+                <div class="title">Registrar nuevo Alumno</div>
+                <input id="name" type="text" placeholder="Nombre" class="Main__form--inputemail">
+                <input id="enrollment" type="text" placeholder="Matricula" class="Main__form--inputpassword">
+                <button class="Main__form--button" id="add_student"><span>Guardar</span></button>
+                <div class="title">Registrar fechas para el grupo</div>
+                <article id="Micalendario">
+                    <div class="calendarioo">
+                      <div class="calendar">
+                        <div class="calendar__info">
+                          <div class="calendar__prev" id="prev-month">&#9664;</div>
+                          <div class="calendar__month" id="month"></div>
+                          <div class="calendar__year" id="year"></div>
+                          <div class="calendar__next" id="next-month">&#9654;</div>
+                        </div>
+                        <div class="calendar__week">
+                            <div class="calendar__day calendar__item">Lunes</div>
+                            <div class="calendar__day calendar__item">Martes</div>
+                            <div class="calendar__day calendar__item">Miercoles</div>
+                            <div class="calendar__day calendar__item">Jueves</div>
+                            <div class="calendar__day calendar__item">Viernes</div>
+                            <div class="calendar__day calendar__item">Sabado</div>
+                            <div class="calendar__day calendar__item">Domingo</div>
+                        </div>
+                        <div class="calendar__dates" id="dates"></div>
+                      </div>
+                      <button id="save__calendar" class="calendar__save"><span class="far fa-save"></span> guardar</button>
+                      <button id="" class="calendar__cancel"><span class="far fa-window-close"></span> cancelar</button>
+                    </div>
+                  </article>
+            </div>
+        </section>
+        <footer class="Footer">
+            <a href="/">Términos de uso</a>
+            <a href="/">Declaración de privacidad</a>
+            <a href="/">Centro de ayuda</a>
+        </footer>
+        <script src="js/add_alumnos.js"></script>
+        <script src="js/scrips.js"></script>
+    </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- este meta sirve para que la inspeccion de mi navegador se responsive y no me haga cosas raras -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UTEZ | Principal</title>
+    <link rel="icon" type="image/png" href="/assets/icono.png" />
+    <link rel="stylesheet" href="/Styles/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- <script src="/__/firebase/7.17.1/firebase-app.js"></script>
+        <script src="/__/firebase/7.17.1/firebase-auth.js"></script>
+        <script src="/__/firebase/init.js"></script>
+        <script src="js/Firebase.js"></script> -->
+        <!--  SCRIPTS DE FIREBASE -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB12Kxasl9_VqpOHoKiH34CZ6PWrhl1hHw",
+            authDomain: "huelladactilar-60cf3.firebaseapp.com",
+            databaseURL: "https://huelladactilar-60cf3.firebaseio.com",
+            projectId: "huelladactilar-60cf3",
+            storageBucket: "huelladactilar-60cf3.appspot.com",
+            messagingSenderId: "980765642383",
+            appId: "1:980765642383:web:2fe8cd052aaaccb4982afa",
+            measurementId: "G-RYPRXF7R8L"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.auth();
+        </script>
+
+    
+  </head>
+  <body>
+    <!-- titulo -->
+    <div class="Add" id="Add">
+      <div class="Add__container">
+        <div class="Add__container--header">
+          <h1>Nuevo Grupo</h1>
+        </div>
+        <div class="Add__container--form">
+          <label id="prueba_1" for="carrera">Carrera:</label>
+          <select id="carrera" name="Carrera" required>
+            <option>Mecatronica</option>
+            <option>Mantenimiento</option>
+            <option>Terapia</option>
+          </select>
+          <label for="grado">Grado: </label>
+          <select id="grado" name="grado" required>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+          </select>
+          <label for="grupo">Grupo:</label>
+          <select id="grupo" name="grupo" required>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+          </select>
+          <button id="add_group" onclick=""><span>Agregar</span></button>
+        </div>
+        <a href="#" id="Add__close" class="far fa-times-circle"></a>
+      </div>
+    </div>
+    <header class="header">
+      <img src="./assets/header_utez.svg" alt="Logo utez">
+    </header>
+    <!-- Menu lateral -->
+    <div class="span__top">
+      <span class="span__top--hr"></span>
+    </div>
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+      <header class="sidebar__header">Menu</header>
+      <ul class="sidebar__ul">
+        <li><a href="#article_groups" class="a"><i class="fas fa-qrcode"></i>  Grupos</a></li>
+        <li><a href="#Cuenta" class="a"><i class="far fa-user"></i>  Cuenta</a></li>
+        <li><a href="#Huella" class="a"><i class="fas fa-cog"></i>  Huella</a></li>
+        <li><a href="#Acerca" class="a"><i class="far fa-question-circle"></i>  Acerca de</a></li>
+      </ul>
+    </div>
+    <!-- Termina menu lateral y comienza mis tabs -->
+    <section>
+      <div class="secciones">
+        <div class="span__top">
+          <span class="span__top--hr"></span>
+        </div>
+        <div class="emailverify"  id="email_verify"><p>Verifica tu correo electronico</p></div>
+        <!-- Parte en donde estaran los grupos y su descripcion-->
+        <article id="article_groups" class="groups">
+          <div class="groups__ind">
+            <a href="#Add"  id="">
+              <span class="fas fa-plus-circle"></span>
+              <p>Agregar</p>
+              <p>grupo</p> 
+            </a>
+          </div> 
+        </article>
+          <!-- Cuenta propia -->
+        
+        <article id="Cuenta">
+          <div class="Cuenta__element">
+            <h1>Hola <span id="name_title"></span> Puedes modificar tu datos aqui</h1>
+            <div class="Cuenta__element--user">
+              <h1>Nombre: </h1>
+              <div>
+                <input id="name_edit-input" disabled type="text" placeholder="Edita tu nombre">
+                <span id="name_edit" class="far fa-edit"></span>
+              </div>
+            </div>
+            <div class="Cuenta__element--user">
+              <h1>Correo: </h1>
+              <div>
+                <input id="email_edit-input" disabled type="email">
+                <span id="email_edit" class="far fa-edit"></span>
+              </div>
+            </div>
+            <div class="Cuenta__element--user">
+              <h1>Contraseña: </h1>
+              <div>
+                <input id="password_edit-input" placeholder="********" disabled type="password">
+                <span id="password_edit" class="far fa-edit"></span>
+              </div>
+            </div>
+            <button id="save_changes" class="Cuenta__element--save" disabled><span class="far fa-save"></span> guardar</button>
+            <button id="cancel_changes" class="Cuenta__element--cancel" disabled><span class="far fa-window-close"></span> cancelar</button>
+            <button class="Cuenta__element--signout" onclick="toggleSignIn()"><span class="fas fa-power-off"></span> cerrar sesión</button>
+          </div>
+        </article>
+        <article id="Huella">
+          <!-- Parte en donde estaran las -->
+          Hols
+        </article>
+        <article id="Acerca">
+          <!-- Parte en donde estaran las especificaciones del proyecto-->
+          <div class="information">
+            <div class="information__proyect">
+              <h1 class="information__proyect--title">
+                UNIVERSIDAD TECNOLÓGICA EMILIANO ZAPATA DEL ESTADO DE MORELOS
+              </h1>
+              <h1 class="information__proyect--title">
+                DIVISIÓN ACADÉMICA DE MECÁNICA INDUSTRIAL
+              </h1>
+              <h1 class="information__proyect--title">
+                SISTEMA DE PASE DE LISTA DACTILAR CON TELEMONITOREO
+              </h1>
+              <p class="information__proyect--subtitle">
+                REPORTE DE ESTADÍA
+                <br>
+                QUE PARA OBTENER EL GRADO DE:
+                <br>
+                TÉCNICO SUPERIOR UNIVERSITARIO EN MECATRÓNICA ÁREA AUTOMATIZACIÓN
+              </p>
+              <h1 class="information__proyect--name">
+                PRESENTA: <br>
+                HECTOR MIGUEL SALAZAR DOROTEO
+              </h1>
+              <div class="redes_sociales">
+                <a class="facebook" href="https://web.facebook.com/Salaxer/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                <a class="twitter" href="https://twitter.com/Salaxer1" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a class="github" href="https://github.com/Salaxer" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a class="instagram" href="https://www.instagram.com/salaxer1/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a class="linkedin" href="https://www.linkedin.com/in/hector-salazar-b409701a4/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a class="email" href="mailto:contact@salaxer.com"><i class="far fa-envelope"></i></a>
+                <a class="phone" href="tel:+527775073272"><i class="fas fa-phone"></i></a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    
+    </section>
+    <div id=""></div>
+    <script src="js/scrips.js"></script>
+    <script src="js/Firebase.js"></script>
+    <script src="js/Menu.js"></script>
+
+  </body>
+</html>
