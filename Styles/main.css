@@ -32,6 +32,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  padding-bottom: 20px;
 }
 
 .Main__form--hr {
@@ -48,8 +49,18 @@ body {
   font-weight: bold;
   margin-top: 80px;
 }
+.Main__form--title a{
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 25px;
+  font-weight: bold;
+}
+#Main__form--check {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 100px;
+  margin-bottom: 100px;
+}
 
-.Main__form--input {
+.Main__form--inputemail, .Main__form--inputpassword {
   background-color: rgba(255, 255, 255, 0.1);
   border: 2px solid #1e3d74;
   border-radius: 20px;
@@ -65,11 +76,20 @@ body {
   transition: box-shadow 0.3s;
 }
 
-.Main__form--input:focus {
-  box-shadow: 2px 0px 20px 1px #1e3d74;
+.Main__form--inputpassword:focus, .Main__form--inputemail:focus {
+  box-shadow: 2px 0px 10px 1px #1e3d74;
+}
+
+.Main__form--inputpassword1 {
+  box-shadow: 2px 0px 10px 1px 0;
+}
+
+.Main__form--inputemail1 {
+  box-shadow: 2px 0px 10px 1px red;
 }
 
 .Main__form--button {
+  margin-top: 15px;
   border-radius: 4px;
   background-color: #1e3d74;
   border: none;
@@ -80,7 +100,6 @@ body {
   width: 200px;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 5px;
 }
 
 .Main__form--button span {
@@ -134,6 +153,20 @@ body {
 ::placeholder {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: bold;
+}
+
+.Footer {
+  padding-top: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.Footer a {
+  text-decoration: none;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+  color: #009575;
 }
 
 /*# sourceMappingURL=main.css.map */

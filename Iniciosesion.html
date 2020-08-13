@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UTEZ | Inicia Sesion</title>
+        <link rel="icon" type="image/png" href="/assets/icono.png" />
+        <link rel="stylesheet" href="./Styles/main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- <script src="/__/firebase/7.17.1/firebase-app.js"></script>
+        <script src="/__/firebase/7.17.1/firebase-auth.js"></script>
+        <script src="/__/firebase/init.js"></script>
+        <script src="js/Firebase.js"></script> -->
+        <!--  SCRIPTS DE FIREBASE -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB12Kxasl9_VqpOHoKiH34CZ6PWrhl1hHw",
+            authDomain: "huelladactilar-60cf3.firebaseapp.com",
+            databaseURL: "https://huelladactilar-60cf3.firebaseio.com",
+            projectId: "huelladactilar-60cf3",
+            storageBucket: "huelladactilar-60cf3.appspot.com",
+            messagingSenderId: "980765642383",
+            appId: "1:980765642383:web:2fe8cd052aaaccb4982afa",
+            measurementId: "G-RYPRXF7R8L"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.auth();
+        </script>
+        <script src="js/Firebase.js"></script>
+        <script src="js/valid.js"></script>
+
+    </head>
+    <body>
+        <header class="header">
+            <img src="./assets/header_utez.svg" alt="Logo utez">
+        </header>
+        <section class="Main">
+            <div class="Main__form">
+                <span class="Main__form--hr"></span>
+                <p class="Main__form--title" tabindex="0"> Iniciar sesion</p>
+                <input autofocus id="email" type="email" placeholder="Correo electronico" class="Main__form--inputemail">
+                <input id="password" type="password" placeholder="Contraseña" class="Main__form--inputpassword">
+                <div class="Main__form--Recupera">
+                    <a href="Rescontra.html">¿Olvidaste tu contraseña?</a>
+                </div>
+                <button class="Main__form--button" onclick="toggleSignIn()"><span>Iniciar</span></button>
+                <div class="Main__form--sigin">
+                    <p>¿No tienes una cuenta? </p>
+                    <p>Registrate <a href="Registro.html">Aqui</a> </p>
+                </div>
+            </div>
+        </section>
+        <footer class="Footer">
+            <a href="/">Términos de uso</a>
+            <a href="/">Declaración de privacidad</a>
+            <a href="/">Centro de ayuda</a>
+        </footer>
+        <script src="js/scrips.js"></script>
+    </body>
+</html>
