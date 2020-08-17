@@ -9,11 +9,10 @@
     <link rel="stylesheet" href="/Styles/style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <!-- <script src="/__/firebase/7.17.1/firebase-app.js"></script>
-        <script src="/__/firebase/7.17.1/firebase-auth.js"></script>
-        <script src="/__/firebase/init.js"></script>
-        <script src="js/Firebase.js"></script> -->
+    <script src="/__/firebase/7.17.1/firebase-auth.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="js/Firebase.js"></script> -->
         <!--  SCRIPTS DE FIREBASE -->
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
@@ -51,11 +50,20 @@
         <div class="Add__container--form">
           <label id="prueba_1" for="carrera">Carrera:</label>
           <select id="carrera" name="Carrera" required>
-            <option>Mecatronica</option>
-            <option>Mantenimiento</option>
-            <option>Terapia</option>
+            <option>ADMINISTRACIÓN DE CAPITAL HUMANO</option>
+            <option>DESARROLLO DE NEGOCIOS MERCADOTECNIA</option>
+            <option>TERAPIA FÍSICA REHABILITACIÓN</option>
+            <option>TERAPIA FÍSICA TURISMO</option>
+            <option>TI DESARRROLLO DE SOFTWARE MULTIPLATAFORMA</option>
+            <option>TI INFRAESTRUCTURA DE REDES DIGITALES</option>
+            <option>DISEÑO DIGITAL</option>
+            <option>DISEÑO DE MODAS</option>
+            <option>MECATRÓNICA</option>
+            <option>MANTENIMIENTO ÁREA INDUSTRIAL</option>
+            <option>NANOTECNOLOGÍA ÁREA MATERIALES</option>
+            <option>PROCESOS INDUSTRIALES</option>
           </select>
-          <label for="grado">Grado: </label>
+          <label for="grado">Cuatriemstre: </label>
           <select id="grado" name="grado" required>
             <option>1</option>
             <option>2</option>
@@ -112,8 +120,6 @@
           <div class="groups__ind">
             <a href="#Add"  id="">
               <span class="fas fa-plus-circle"></span>
-              <p>Agregar</p>
-              <p>grupo</p> 
             </a>
           </div> 
         </article>
@@ -150,7 +156,17 @@
         </article>
         <article id="Huella">
           <!-- Parte en donde estaran las -->
-          Hols
+          <div class="Cuenta__element">
+            <h1>Agrega </h1>
+            <div class="Cuenta__element--user">
+              <h1>Nombre: </h1>
+              <div>
+                <input id="name_edit-input" disabled type="text" placeholder="Edita tu nombre">
+                <span id="name_edit" class="far fa-edit"></span>
+              </div>
+            </div>
+            <button id="save_changes" class="Cuenta__element--save" disabled><span class="far fa-save"></span> guardar</button>
+          </div>
         </article>
         <article id="Acerca">
           <!-- Parte en donde estaran las especificaciones del proyecto-->

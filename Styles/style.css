@@ -271,7 +271,7 @@ section{
   height: 250px;
   margin-top: 30px;
   margin-right: 22px;
-  font-size: 30px;
+  font-size: 25px;
   cursor: pointer;
   transition: 450ms all;
   -webkit-transform-origin: center left;
@@ -296,6 +296,9 @@ section{
   justify-content: center;
   align-items: center;
   color: rgba(0,0,0,.5);
+}
+.groups__ind a span{
+  font-size: 35px;
 }
   
   /* Empieza la cuenta */
@@ -432,6 +435,16 @@ section{
 .Cuenta__element--signout:hover{
   background-color: rgba(255, 0, 0, 0.815);
 }
+/* Parte de la huella dactilar */
+#Huella{
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+/* Empieza acerca de*/
 .information{
   display: flex;
   flex-direction: column;

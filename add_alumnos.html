@@ -40,6 +40,7 @@
         </script>
         <script src="js/valid.js"></script>
 
+
     </head>
     <body>
         <header class="header">
@@ -49,23 +50,21 @@
             <div class="Main__form">
                 <span class="Main__form--hr"></span>
                 <div class="title" id="recivir"></div>
+                <div class="title" style="display: flex;"><p id="filas"></p><p> X </p><p id="column"></p></div>
                 <div class="Main__form--table">
                     <table class="table">
                       <thead>
-                        <tr>
+                        <tr id="table__get--dates">
                             <th>Alumno</th>
                             <th>Matricula</th>
                             <th>#ID</th>
-                            <th><p class="verticalText">Abril</p></th>
-                            <th><p class="verticalText">Abril</p></th>
-                            <th><p class="verticalText">Abril</p></th>
-                            <th><p class="verticalText">Abril</p></th>
                         </tr>
                       </thead>
                       <tbody id="table__get--students">
                       </tbody>
                     </table>
                 </div>
+                <button class="Main__form--button" id="justify_student"><span>Justificar</span></button>
                 <div class="title">Registrar nuevo Alumno</div>
                 <input id="name" type="text" placeholder="Nombre" class="Main__form--inputemail">
                 <input id="enrollment" type="text" placeholder="Matricula" class="Main__form--inputpassword">
@@ -92,7 +91,6 @@
                         <div class="calendar__dates" id="dates"></div>
                       </div>
                       <button id="save__calendar" class="calendar__save"><span class="far fa-save"></span> guardar</button>
-                      <button id="" class="calendar__cancel"><span class="far fa-window-close"></span> cancelar</button>
                     </div>
                   </article>
             </div>

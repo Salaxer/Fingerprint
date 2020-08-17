@@ -9,7 +9,7 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
   justify-content: center;
-  background-color: #009575;
+  background-color: #009675;
 }
 
 .header img {
@@ -136,7 +136,7 @@ body {
 
 .Main__form--Recupera a {
   text-decoration: none;
-  color: #009575;
+  color: #009675;
   transition: color 0.5s;
 }
 
@@ -166,7 +166,28 @@ body {
   text-decoration: none;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: bold;
-  color: #009575;
+  color: #009675;
 }
-
+@media only screen and (max-width: 780px) {
+  .header img {
+    width: 100%;
+    height: 120px;
+    background-color: white;
+  }
+  .Main {
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .Main__form {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 20px;
+  }
+}
 /*# sourceMappingURL=main.css.map */
