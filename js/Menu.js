@@ -50,33 +50,17 @@ function initApp() {
                     </a>
                   </div> `);
               });
-              // database.ref('/grupos/'+ displayName+'/'+index).once('value',function(snapshot){
-              //   snapshot.forEach(function(childsnapshot){
-              //     var childData = childsnapshot.val();
-
-                  
-              //   });
-              // });
-              
             }
           });
         }); 
-        // termina la carga
-          
-        // [END_EXCLUDE]
       } else {
         // User is signed out.
         window.location.replace("https://salaxer.com/Iniciosesion.html");
-        
-        // [START_EXCLUDE]
-        // [END_EXCLUDE]
       }
       // [START_EXCLUDE silent]
       // [END_EXCLUDE]
     });
-    
     // [END authstatelistener]
-  
   }
   window.onload = function() {
     initApp();
@@ -169,8 +153,6 @@ function initApp() {
   document.getElementById('email_edit').addEventListener('click', EditEmail, false);
   document.getElementById('cancel_changes').addEventListener('click', cancel, false);
   document.getElementById('save_changes').addEventListener('click', save, false);
-
-
   function sendPasswordReset() {
     var user = firebase.auth().currentUser;
     var email = user.email;
@@ -201,7 +183,7 @@ function initApp() {
     var group = document.getElementById('grupo').value;
     
     var userId = firebase.auth().currentUser;
-    if (!userId) {
+    if (!userId.displayName) {
       alert('Necesitas un nombre de usuario para poder crear un grupo, selecione uno en el apartado "Cuenta" ') 
       return;    
     }
@@ -239,4 +221,30 @@ function initApp() {
   }
   document.getElementById('password_edit').addEventListener('click', sendPasswordReset, false);
   document.getElementById('add_group').addEventListener('click', addNewgroup, false);
+function editfinger() {
+  document.getElementById('huellas_dactilares').disabled = false;
+  document.getElementById('Agregar_huellas').disabled = false;
+}
+function addfingerprint() {
+  var id = document.getElementById('huellas_dactilares').value;
+  var userId = firebase.auth().currentUser;
+    if (!userId.displayName) {
+      alert('Necesitas un nombre de usuario para poder crear un grupo, selecione uno en el apartado "Cuenta" ') 
+      return;    
+    }
+    var database = firebase.database();
+    database.ref('/Huella/' + id).set({
+      profe: userId.displayName
+    },function(error) {
+      if (error) {
+        alert('Valio');
+      } else {
+        alert('Dispositivo agregado correctamente');
+        location.reload(true);
+        // Data saved successfully!
+      }
+    });
+}
+  document.getElementById('huellas_edit').addEventListener('click', editfinger, false);
+  document.getElementById('Agregar_huellas').addEventListener('click', addfingerprint, false);
 

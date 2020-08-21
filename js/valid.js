@@ -10,7 +10,6 @@ function initApp() {
         // [END_EXCLUDE]
       } else {
         // User is signed out.
-        window.location.replace("https://salaxer.com/Iniciosesion.html");
         // [START_EXCLUDE]
         // [END_EXCLUDE]
       }

@@ -189,5 +189,14 @@ body {
     justify-content: space-around;
     padding-bottom: 20px;
   }
+  .Main__form--inputemail, .Main__form--inputpassword {
+    width: 70%;
+  }
+  .Main__form--title {
+    margin-top: 50px;
+  }
+  .Main__form--hr {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=main.css.map */
